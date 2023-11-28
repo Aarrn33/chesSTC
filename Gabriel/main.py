@@ -1,0 +1,1 @@
+print("Coucou à tout le monde j'aime bien les frites.")
