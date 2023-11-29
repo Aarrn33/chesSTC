@@ -10,7 +10,7 @@ def eval(board: chess.Board):
             print(piece)
 
 
-pgn = open("PGN/Firouzja.pgn")
+pgn = open("Arnaud/PGN/Firouzja.pgn")
 game = chess.pgn.read_game(pgn)
 
 board = game.board()
