@@ -29,14 +29,19 @@ def eval(board):
     elif player == chess.BLACK:
         score = black_score-white_score
 
-    print([piece.symbol() for piece in white_pieces], white_score)
-    print([piece.symbol() for piece in black_pieces], black_score)
+    # print([piece.symbol() for piece in white_pieces], white_score)
+    # print([piece.symbol() for piece in black_pieces], black_score)
 
     return score
 
 
 board = chess.Board()
-score = eval(board)
-print(score)
-
-legal_moves = list(board.legal_moves)
+iteration = 0
+while not board.is_game_over():
+    score = eval(board)
+    print(score)
+    if iteration % 5 == 0:
+        print(board)
+    legal_moves = list(board.legal_moves)
+    board.push(legal_moves[0])
+    iteration += 1
