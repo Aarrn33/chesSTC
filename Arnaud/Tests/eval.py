@@ -1,6 +1,5 @@
 import chess
 
-
 def eval(board):
     PIECES_VALUES = {"K": 900, "Q": 90, "R": 50, "N": 30, "B": 30, "P": 10}
     if board.turn:
@@ -33,16 +32,3 @@ def eval(board):
     # print([piece.symbol() for piece in black_pieces], black_score)
 
     return score
-
-
-board = chess.Board()
-iteration = 0
-while not board.is_game_over():
-    score = eval(board)
-    print(score)
-    if iteration % 5 == 0:
-        print(board)
-    legal_moves = list(board.legal_moves)
-    board.push(legal_moves[0])
-    iteration += 1
-print(board.outcome(), board.result())
